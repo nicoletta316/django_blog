@@ -11,14 +11,15 @@
         <h3>Autor: Karo</h3>
         <h4>Wszelkie prawa zastrzeżone</h4>
     </div>
-<p>To jest akapit</p>
-<em>To jest wyróżniony fragment</em><br>
-<strong>Tu jest pogrubiony tekst</strong>
-<a href="https://strefakursow.pl">LINK</a>
-<ul>
-    <li>Elementy listy</li>
-    <li>Elementy listy</li>
-    <li>Elementy listy</li>
-</ul>
+    {% comment %}
+    Tutaj lista postów
+    {% endcomment %}
+    {% for post in posts %}
+    <div>
+        <p>opublikowany: {{ post.published_date }}</p>
+        <h2> <a href="">{{ post.title }}</a></h2>
+        <em>{{ post.text|linebreaksbr }}</em>
+    </div>
+    {% endfor %}
 </body>
 </html>
